@@ -1,7 +1,7 @@
-// Описан в документации
 import flatpickr from "flatpickr";
-// Дополнительный импорт стилей
 import "flatpickr/dist/flatpickr.min.css";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -49,8 +49,11 @@ const options = {
 	  let selectedDate = selectedDates[0].getTime();
 	  let currentDate = Date.now();
 	//   console.log(currentDate);
-	  if (selectedDate <  currentDate) {
-	  window.alert("Please choose a date in the future")
+	  if (selectedDate < currentDate) {
+		  Notify.failure('Please choose a date in the future', {
+    timeout: 2000,
+  },);
+	//   window.alert("Please choose a date in the future")
 		  return
 	  };
 	  startBtn.disabled = false;
