@@ -71,11 +71,11 @@ startBtn.addEventListener('click', onStartBtnClick); // click on START BUTTON
 
 const timer = {
 	intervalId: null,
-	// isActive: false, // добавляем, если не отключать кнопку
+	isActive: false,
 	start() {
-		// if (this.isActive) { // добавляем, если не отключать кнопку
-		// 	return;
-		// }
+		if (this.isActive) {
+			return;
+		}
 		
 		const inputDate = new Date(input.value).getTime();
 		this.isActive = true;
@@ -88,7 +88,7 @@ const timer = {
 			// console.log(timeLeft);
 			if (timeLeft < 0) {
 				clearInterval(this.intervalId);
-				// this.isActive = false; // добавляем, если не отключать кнопку
+				this.isActive = false;
 				return;
 			};
 			
@@ -101,10 +101,10 @@ const timer = {
 };
 
 function updateTimerFace({ days, hours, minutes, seconds }) {
-	timerDays.textContent = days;
-	timerHours.textContent = hours;
-	timerMinutes.textContent = minutes;
-	timerSeconds.textContent = seconds;
+	timerDays.textContent = `${days}`;
+	timerHours.textContent = `${hours}`;
+	timerMinutes.textContent = `${minutes}`;
+	timerSeconds.textContent = `${seconds}`;
 }
 
 
