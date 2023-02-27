@@ -23,6 +23,12 @@ button[data-start] {
 	padding: 10px 20px;
 }
 
+button[data-stop] {
+	font-size: 18px;
+	color: black;
+	padding: 10px 20px;
+}
+
 #datetime-picker {
 
 	padding: 10px;

@@ -106,11 +106,3 @@ function updateTimerFace({ days, hours, minutes, seconds }) {
 	timerMinutes.textContent = `${minutes}`;
 	timerSeconds.textContent = `${seconds}`;
 }
-
-
-
-
-
-
-
-
